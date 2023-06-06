@@ -58,10 +58,30 @@ const Hero = () => {
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
+  
+    const [phrase, setPhrase] = useState("I build things for backend.");
+
+  useEffect(() => {
+    const phrases = [
+      "I build things for backend.",
+      "I build things for front-end.",
+      "I build things for data science.",
+      "I build things for DevOps.",
+    ];
+
+    let i = 0;
+    const intervalId = setInterval(() => {
+      setPhrase(phrases[i % phrases.length]);
+      i++;
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Jeevani Rao.</h2>;
-  const three = <h3 className="big-heading">I build things for backend.</h3>;
+  //const three = <h3 className="big-heading">I build things for backend.</h3>;
+  const three = <h3 className="big-heading">{phrase}</h3>;
   const four = (
     <>
       <p>

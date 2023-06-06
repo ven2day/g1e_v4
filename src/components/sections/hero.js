@@ -61,7 +61,18 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Jeevani Rao.</h2>;
-  const three = <h3 className="big-heading">I build things for the backend.</h3>;
+  const [words, setWords] = useState(["backend", "frintend"]);
+  const three = <h3 className="big-heading">I build things for the 
+  return (
+      <div className="scroller">
+        <span>
+          {words[0]}
+          <br />
+          {words[1]}
+        </span>
+      </div>
+    </div>
+  )</h3>;
   const four = (
     <>
       <p>

@@ -12,6 +12,36 @@ const StyledHeroSection = styled.section`
   height: 100vh;
   padding: 0;
 
+@keyframes slide {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.scroller {
+  height: 100px;
+  overflow: hidden;
+}
+
+.scroller p {
+  animation: slide 5s infinite;
+  text-align: center;
+  line-height: 100px;
+}
+
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
     padding-top: var(--nav-height);
@@ -62,16 +92,23 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Jeevani Rao.</h2>;
-  const three = (
-    <div className="big-heading">
-      <h3>I build things for the </h3>
-      <div className="scroller" style={{ height: '100px', overflow: 'auto' }}>
-        {words.map((word, index) => (
-          <p key={index}>{word}</p>
-        ))}
-      </div>
+  const [index, setIndex] = useState(0);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setIndex((prevIndex) => (prevIndex + 1) % words.length);
+  }, 5000);
+  return () => clearInterval(timer);
+}, []);
+
+const three = (
+  <div className="big-heading">
+    <h3>I build things for the </h3>
+    <div className="scroller">
+      <p>{words[index]}</p>
     </div>
-  );
+  </div>
+);
 const four = (
     <>
       <p>

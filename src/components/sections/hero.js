@@ -79,7 +79,7 @@ const StyledHeroSection = styled.section`
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const [words, setWords] = useState(["backend", "frintend"]);
+  const [words, setWords] = useState(["backend", "frontend"]);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -93,22 +93,21 @@ const Hero = () => {
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Jeevani Rao.</h2>;
   const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
-useEffect(() => {
-  const timer = setInterval(() => {
-    setIndex((prevIndex) => (prevIndex + 1) % words.length);
-  }, 5000);
-  return () => clearInterval(timer);
-}, []);
-
-const three = (
-  <div className="big-heading">
-    <h3>I build things for the </h3>
-    <div className="scroller">
-      <p>{words[index]}</p>
+  const three = (
+    <div className="big-heading">
+      <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        I build things for the &nbsp;
+        <span className="scroller" style={{ paddingLeft: '10px' }}>{words[index]}</span>
+      </h3>
     </div>
-  </div>
-);
+  );
 const four = (
     <>
       <p>

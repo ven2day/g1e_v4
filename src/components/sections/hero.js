@@ -12,36 +12,6 @@ const StyledHeroSection = styled.section`
   height: 100vh;
   padding: 0;
 
-@keyframes slide {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  10% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  90% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-.scroller {
-  height: 100px;
-  overflow: hidden;
-}
-
-.scroller p {
-  animation: slide 5s infinite;
-  text-align: center;
-  line-height: 100px;
-}
-
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
     padding-top: var(--nav-height);
@@ -79,8 +49,7 @@ const StyledHeroSection = styled.section`
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const [words, setWords] = useState(["backend", "frontend"]);
-  
+
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -90,30 +59,18 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Jeevani Rao.</h2>;
-  const three = (
-    <h3 className="big-heading" style={{ display: 'flex', justifyContent: 'left', alignItems: 'left' }}>
-      //I build things for the <span> {words[index]} </span>
-      I build things for the <span style= {{ paddingLeft: '10px' }}>{words[index]}</span>
-    </h3>
-  );
+  const three = <h3 className="big-heading">I build things for backend.</h3>;
   const four = (
     <>
       <p>
-        I’m a software developer specializing in building backend applications (and occasionally designing) and webservices for exceptional
-        digital experiences. Currently, I’m working at digital bank solutions for African markets at{' '}
+                I’m a software developer specializing in building backend applications (and occasionally designing) and webservices for exceptional
+        digital experiences. Currently, I’m working at digital bank solutions for African markets at
+{' '}
         <a href="https://capitec.co.za/" target="_blank" rel="noreferrer">
           Capitec Bank
-        </a>
-        .
+        </a>.
       </p>
     </>
   );

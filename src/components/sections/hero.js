@@ -80,7 +80,7 @@ const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
   const [words, setWords] = useState(["backend", "frontend"]);
-
+  
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -90,9 +90,6 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Jeevani Rao.</h2>;
-  const [index, setIndex] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
@@ -100,15 +97,14 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const one = <h1>Hi, my name is</h1>;
+  const two = <h2 className="big-heading">Jeevani Rao.</h2>;
   const three = (
-    <div className="big-heading">
-      <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        I build things for the &nbsp;
-        <span className="scroller" style={{ paddingLeft: '10px' }}>{words[index]}</span>
-      </h3>
-    </div>
+    <h3 className="big-heading" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      I build things for the <span style={{ paddingLeft: '10px' }}>{words[index]}</span>
+    </h3>
   );
-const four = (
+  const four = (
     <>
       <p>
         I’m a software developer specializing in building backend applications (and occasionally designing) and webservices for exceptional

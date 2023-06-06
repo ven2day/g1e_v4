@@ -60,16 +60,15 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Jeevani Rao.</h2>;
+  const three = <h3 className="big-heading">I build things for the backend.</h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+        I’m a software developer specializing in building backend applications (and occasionally designing) and webservices for exceptional
+        digital experiences. Currently, I’m working at digital bank solutions for African markets at{' '}
+        <a href="https://capitec.co.za/" target="_blank" rel="noreferrer">
+          Capitec Bank
         </a>
         .
       </p>
@@ -81,7 +80,7 @@ const Hero = () => {
       href="https://www.newline.co/courses/build-a-spotify-connected-app"
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Check out my LinkedIn!
     </a>
   );
 

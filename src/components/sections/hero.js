@@ -65,8 +65,8 @@ const Hero = () => {
     const phrases = [
       "I build things for backend.",
       "I build things for front-end.",
-      "I build things for data science.",
-      "I build things for DevOps.",
+      //"I build things for data science.",
+      "I build things for Data Engineering.",
     ];
 
     let i = 0;

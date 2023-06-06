@@ -101,8 +101,8 @@ const Hero = () => {
   const two = <h2 className="big-heading">Jeevani Rao.</h2>;
   const three = (
     <h3 className="big-heading" style={{ display: 'flex', justifyContent: 'left', alignItems: 'left' }}>
-      I build things for the <span> {words[index]} </span>
-      //I build things for the <span style= {{ paddingLeft: '10px' }}>{words[index]}</span>
+      //I build things for the <span> {words[index]} </span>
+      I build things for the <span style= {{ paddingLeft: '10px' }}>{words[index]}</span>
     </h3>
   );
   const four = (

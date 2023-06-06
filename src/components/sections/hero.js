@@ -49,6 +49,7 @@ const StyledHeroSection = styled.section`
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [words, setWords] = useState(["backend", "frintend"]);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -61,20 +62,17 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Jeevani Rao.</h2>;
-  const [words, setWords] = useState(["backend", "frintend"]);
   const three = (
-    <div>
-      <h3 className="big-heading">I build things for the </h3>
-      <div className="scroller">
-        <span>
-          {words[0]}
-          <br />
-          {words[1]}
-        </span>
+    <div className="big-heading">
+      <h3>I build things for the </h3>
+      <div className="scroller" style={{ height: '100px', overflow: 'auto' }}>
+        {words.map((word, index) => (
+          <p key={index}>{word}</p>
+        ))}
       </div>
     </div>
   );
-  const four = (
+const four = (
     <>
       <p>
         I’m a software developer specializing in building backend applications (and occasionally designing) and webservices for exceptional

@@ -58,15 +58,15 @@ const Hero = () => {
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
-  
-    const [phrase, setPhrase] = useState("I build things for backend.");
+
+  const [phrase, setPhrase] = useState('I build things for backend.');
 
   useEffect(() => {
     const phrases = [
-      "I build things for backend.",
-      "I build things for front-end.",
+      'I build things for backend.',
+      'I build things for frontend.',
       //"I build things for data science.",
-      "I build things for Data Engineering.",
+      'I build things for CyberSecurity.',
     ];
 
     let i = 0;
@@ -85,19 +85,20 @@ const Hero = () => {
   const four = (
     <>
       <p>
-                I’m a software developer specializing in building backend applications (and occasionally designing) and webservices for exceptional
-        digital experiences. Currently, I’m working at digital bank solutions for African markets at
-{' '}
-        <a href="https://capitec.co.za/" target="_blank" rel="noreferrer">
-          Capitec Bank
-        </a>.
+        I’m a software developer specializing in building backend applications (and occasionally
+        designing) and webservices for exceptional digital experiences. Currently, I’m working at
+        CyberSecurity solutions for Telecom and Banking markets at{' '}
+        <a href="https://srmtech.com/" target="_blank" rel="noreferrer">
+          SRM Technologies.
+        </a>
+        .
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="https://www.linkedin.com/in/itsjeevani/"
+      href="https://www.linkedin.com/in/jeevanig/"
       target="_blank"
       rel="noreferrer">
       Check out my LinkedIn!

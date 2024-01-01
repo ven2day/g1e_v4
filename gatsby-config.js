@@ -2,7 +2,7 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Jeevani Rao',
+    title: 'Jeevani Goga',
     description:
       'Jeevani Rao is a Java Full Stack Developer who specializes in building (and occasionally designing) exceptional backend software tools using Java and Spring (Spring Boot).',
     siteUrl: 'https://g1e.me', // No trailing slash allowed!
